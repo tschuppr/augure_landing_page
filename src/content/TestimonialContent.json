@@ -1,0 +1,9 @@
+{   "title": "Ils en parlent mieux que nous",
+    "text": "Une bannière pour vos témoignages",
+    "id": "temoignage",
+    "elements":[
+        { "id": 1, "name": "Rudy, Pharmacien", "text": "\"Excellent service ! Je recommande vivement.\"" },
+        { "id": 2, "name": "Eva, Pharmacienne", "text": "\"Très satisfaite de mon achat. Merci !\"" },
+        { "id": 3, "name": "Jeremy, Pharmacien", "text": "\"Produit de qualité et livraison rapide. doizah diazhjd azdzai djzapi djzai pdhizah jdipzadaz\n zaoihuj diazh dihzadi hazpdhaz dpoiazdzad\"" }
+    ]
+}

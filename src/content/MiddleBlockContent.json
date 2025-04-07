@@ -1,0 +1,13 @@
+{
+  "title": "Landing page template for developers & startups",
+  "text": "Nous analysons vos achats auprès des grossistes-répartiteurs et génériqueurs pour identifier des opportunités d’optimisation et garantir une visibilité complète sur vos opérations commerciales.",
+  "button": [
+    {
+      "title": "Explore"
+    },
+    {
+      "title": "Learn more",
+      "color": "#fff"
+    }
+  ]
+}
