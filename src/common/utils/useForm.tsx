@@ -1,94 +1,107 @@
-import { useState } from "react";
-import { notification } from "antd";
+import { useState } from 'react'
+import { notification } from 'antd'
 
 interface IValues {
-  name: string;
-  email: string;
-  message: string;
+  name: string
+  email: string
+  message: string
+  tel_number: string
+  last_name: string
+  address: string
 }
 
 const initialValues: IValues = {
-  name: "",
-  email: "",
-  message: "",
-};
+  name: '',
+  email: '',
+  message: '',
+  tel_number: '',
+  last_name: '',
+  address: ''
+}
+
+type NotificationType = 'success' | 'info' | 'warning' | 'error'
 
 export const useForm = (validate: { (values: IValues): IValues }) => {
+  const [api, contextHolder] = notification.useNotification()
+
+  const openNotificationWithIcon = (
+    type: NotificationType,
+    message: string,
+    description: string
+  ) => {
+    api[type]({
+      message: message,
+      description: description
+    })
+  }
+
   const [formState, setFormState] = useState<{
-    values: IValues;
-    errors: IValues;
+    values: IValues
+    errors: IValues
   }>({
     values: { ...initialValues },
-    errors: { ...initialValues },
-  });
+    errors: { ...initialValues }
+  })
 
   const handleSubmit = async (event: React.ChangeEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const values = formState.values;
-    const errors = validate(values);
-    setFormState((prevState) => ({ ...prevState, errors }));
+    event.preventDefault()
+    const values = formState.values
+    const errors = validate(values)
+    setFormState((prevState) => ({ ...prevState, errors }))
 
-    const url = ""; // Fill in your API URL here
+    const url = '' // Fill in your API URL here
 
     try {
-      if (Object.values(errors).every((error) => error === "")) {
+      if (Object.values(errors).every((error) => error === '')) {
         const response = await fetch(url, {
-          method: "POST",
+          method: 'POST',
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json'
           },
-          body: JSON.stringify(values),
-        });
+          body: JSON.stringify(values)
+        })
 
         if (!response.ok) {
-          notification["error"]({
-            message: "Error",
-            description:
-              "There was an error sending your message, please try again later.",
-          });
+          openNotificationWithIcon(
+            'error',
+            'Error',
+            'There was an error sending your message, please try again later.'
+          )
         } else {
-          event.target.reset();
+          event.target.reset()
           setFormState(() => ({
             values: { ...initialValues },
-            errors: { ...initialValues },
-          }));
-
-          notification["success"]({
-            message: "Success",
-            description: "Your message has been sent!",
-          });
+            errors: { ...initialValues }
+          }))
+          openNotificationWithIcon('success', 'Success', 'Your message has been sent!')
         }
       }
     } catch (error) {
-      notification["error"]({
-        message: "Error",
-        description: "Failed to submit form. Please try again later.",
-      });
+      openNotificationWithIcon('error', 'Error', 'Failed to submit form. Please try again later.')
     }
-  };
+  }
 
-  const handleChange = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    event.persist();
-    const { name, value } = event.target;
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    event.persist()
+    const { name, value } = event.target
     setFormState((prevState) => ({
       ...prevState,
       values: {
         ...prevState.values,
-        [name]: value,
+        [name]: value
       },
       errors: {
         ...prevState.errors,
-        [name]: "",
-      },
-    }));
-  };
+        [name]: ''
+      }
+    }))
+  }
 
   return {
+    contextHolder,
     handleChange,
     handleSubmit,
     values: formState.values,
-    errors: formState.errors,
-  };
-};
+    errors: formState.errors
+  }
+}

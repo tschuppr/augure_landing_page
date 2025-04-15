@@ -1,41 +1,41 @@
-import { useCallback, useEffect, useState } from "react";
-import { SvgIcon } from "../SvgIcon";
-import { ScrollUpContainer } from "./styles";
+import { useCallback, useEffect, useState } from 'react'
+import { SvgIcon } from '../SvgIcon'
+import { ScrollUpContainer } from './styles'
 
 const ScrollToTop = () => {
-  const [showScroll, setShowScroll] = useState(false);
+  const [showScroll, setShowScroll] = useState(false)
 
   const checkScrollTop = useCallback(() => {
-    const offsetFromTop = window.scrollY;
+    const offsetFromTop = window.scrollY
 
     if (!showScroll && offsetFromTop > 350) {
-      setShowScroll(true);
+      setShowScroll(true)
     } else if (offsetFromTop <= 350) {
-      setShowScroll(false);
+      setShowScroll(false)
     }
-  }, [showScroll]);
+  }, [showScroll])
 
   useEffect(() => {
-    window.addEventListener("scroll", checkScrollTop);
+    window.addEventListener('scroll', checkScrollTop)
     return () => {
-      window.removeEventListener("scroll", checkScrollTop);
-    };
-  }, [checkScrollTop]);
+      window.removeEventListener('scroll', checkScrollTop)
+    }
+  }, [checkScrollTop])
 
   const scrollUp = () => {
-    const element = document.getElementById("intro") as HTMLDivElement;
+    const element = document.getElementById('intro') as HTMLDivElement
     element.scrollIntoView({
-      behavior: "smooth",
-      block: "end",
-      inline: "nearest",
-    });
-  };
+      behavior: 'smooth',
+      block: 'end',
+      inline: 'nearest'
+    })
+  }
 
   return (
     <ScrollUpContainer onClick={scrollUp} show={showScroll}>
       <SvgIcon src="scroll-top.svg" width="20px" height="20px" />
     </ScrollUpContainer>
-  );
-};
+  )
+}
 
-export default ScrollToTop;
+export default ScrollToTop

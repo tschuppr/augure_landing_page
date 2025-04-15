@@ -1,9 +1,10 @@
-import { useState } from "react";
-import { Row, Col, Drawer } from "antd";
-import { withTranslation, TFunction } from "react-i18next";
-import Container from "../../common/Container";
-import { SvgIcon } from "../../common/SvgIcon";
-import { Button } from "../../common/Button";
+import { useState } from 'react'
+import { Row, Col, Drawer } from 'antd'
+import { withTranslation } from 'react-i18next'
+import { TFunction } from 'i18next'
+import Container from '../../common/Container'
+import { SvgIcon } from '../../common/SvgIcon'
+import { Button } from '../../common/Button'
 import {
   HeaderSection,
   LogoContainer,
@@ -13,46 +14,43 @@ import {
   CustomNavLinkSmall,
   Label,
   Outline,
-  Span,
-} from "./styles";
+  Span
+} from './styles'
 
 const Header = ({ t }: { t: TFunction }) => {
-  const [visible, setVisibility] = useState(false);
+  const [visible, setVisibility] = useState(false)
 
   const toggleButton = () => {
-    setVisibility(!visible);
-  };
+    setVisibility(!visible)
+  }
 
   const MenuItem = () => {
     const scrollTo = (id: string) => {
-      const element = document.getElementById(id) as HTMLDivElement;
+      const element = document.getElementById(id) as HTMLDivElement
       element.scrollIntoView({
-        behavior: "smooth",
-      });
-      setVisibility(false);
-    };
+        behavior: 'smooth'
+      })
+      setVisibility(false)
+    }
     return (
       <>
-        <CustomNavLinkSmall onClick={() => scrollTo("about")}>
-          <Span>{t("About")}</Span>
+        <CustomNavLinkSmall onClick={() => scrollTo('about')}>
+          <Span>{t('About')}</Span>
         </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => scrollTo("mission")}>
-          <Span>{t("Mission")}</Span>
+        <CustomNavLinkSmall onClick={() => scrollTo('mission')}>
+          <Span>{t('Mission')}</Span>
         </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => scrollTo("product")}>
-          <Span>{t("Product")}</Span>
+        <CustomNavLinkSmall onClick={() => scrollTo('product')}>
+          <Span>{t('Product')}</Span>
         </CustomNavLinkSmall>
-        <CustomNavLinkSmall
-          style={{ width: "180px" }}
-          onClick={() => scrollTo("contact")}
-        >
+        <CustomNavLinkSmall style={{ width: '180px' }} onClick={() => scrollTo('contact')}>
           <Span>
-            <Button>{t("Contact")}</Button>
+            <Button>{t('Contact')}</Button>
           </Span>
         </CustomNavLinkSmall>
       </>
-    );
-  };
+    )
+  }
 
   return (
     <HeaderSection>
@@ -69,7 +67,7 @@ const Header = ({ t }: { t: TFunction }) => {
           </Burger>
         </Row>
         <Drawer closable={false} open={visible} onClose={toggleButton}>
-          <Col style={{ marginBottom: "2.5rem" }}>
+          <Col style={{ marginBottom: '2.5rem' }}>
             <Label onClick={toggleButton}>
               <Col span={12}>
                 <Menu>Menu</Menu>
@@ -83,7 +81,7 @@ const Header = ({ t }: { t: TFunction }) => {
         </Drawer>
       </Container>
     </HeaderSection>
-  );
-};
+  )
+}
 
-export default withTranslation()(Header);
+export default withTranslation()(Header)
