@@ -11,21 +11,11 @@ const MiddleBlock = lazy(() => import('../../components/MiddleBlock'))
 // const Container = lazy(() => import('../../common/Container'))
 const ScrollToTop = lazy(() => import('../../common/ScrollToTop'))
 const ContentBlock = lazy(() => import('../../components/ContentBlock'))
+const InformationBlock = lazy(() => import('../../components/InformationBlock'))
 
 const Home = () => {
   return (
     <div>
-      {/* <svg          style={{
-          position: "absolute",
-          top: 0,
-         left: 0,
-         width: "100%",
-         height: "100%",
-         pointerEvents: "none"
-       }}> */}
-      {/* <polygon points="0,0 0,500 500,500 500,0" color="dark"/> */}
-      {/* <circle  cx={0} cy={0}  r={200}/> */}
-      {/* </svg> */}
       <ScrollToTop />
       <MiddleBlock
         title={IntroContent.title}
@@ -33,47 +23,37 @@ const Home = () => {
         button={IntroContent.button}
         id="intro"
       />
-      {/* <svg  style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          pointerEvents: "none"
-        }}>
-        <polygon points="0,0 0,500 500,500 500,0" color="dark"/>
-        <circle  cx={1300} cy={500}  r={200} color="red"/>
-      </svg> */}
       <ContentBlock
-        direction="right"
+        direction="left"
         title={MiddleBlockContent.title}
         content={MiddleBlockContent.text}
-        button={MiddleBlockContent.button}
-        icon="developer.svg"
+        section={MiddleBlockContent.section}
+        icon="documentmieux.svg"
         id="after"
       />
       <ContentBlock
-        direction="left"
+        direction="right"
         title={AboutContent.title}
         content={AboutContent.text}
         section={AboutContent.section}
-        icon="graphs.svg"
+        icon="file-searchmieux.svg"
         id="about"
       />
       <ContentBlock
-        direction="right"
+        direction="left"
         title={MissionContent.title}
         content={MissionContent.text}
-        icon="product-launch.svg"
+        icon="spreadsheet.svg"
         id="mission"
       />
-      <ContentBlock
+      {/* <ContentBlock
         direction="left"
         title={ProductContent.title}
         content={ProductContent.text}
-        icon="waving.svg"
+        icon="ventilation.svg"
         id="product"
-      />
+      /> */}
+      <InformationBlock id="information" direction="right" />
       <Contact title={ContactContent.title} content={ContactContent.text} id="contact" />
     </div>
   )

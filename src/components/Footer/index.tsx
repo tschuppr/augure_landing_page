@@ -17,10 +17,10 @@ import {
   Chat,
   // Empty,
   // FooterContainer,
-  Language,
-  Label,
-  LanguageSwitch,
-  LanguageSwitchContainer
+  Language
+  // Label,
+  // LanguageSwitch,
+  // LanguageSwitchContainer
 } from './styles'
 
 // interface SocialLinkProps {
@@ -29,10 +29,15 @@ import {
 // }
 
 const Footer = ({ t }: { t: TFunction }) => {
-  const handleChange = (language: string) => {
-    i18n.changeLanguage(language)
+  // const handleChange = (language: string) => {
+  //   i18n.changeLanguage(language)
+  // }
+  const scrollTo = (id: string) => {
+    const element = document.getElementById(id) as HTMLDivElement
+    element.scrollIntoView({
+      behavior: 'smooth'
+    })
   }
-
   // const SocialLink = ({ href, src }: SocialLinkProps) => {
   //   return (
   //     <a href={href} target="_blank" rel="noopener noreferrer" key={src} aria-label={src}>
@@ -48,7 +53,7 @@ const Footer = ({ t }: { t: TFunction }) => {
           <Row justify="space-between">
             <Col lg={10} md={10} sm={12} xs={12}>
               <Language>{t('Contact')}</Language>
-              <Large to="/">{t('Tell us everything')}</Large>
+              <Large onClick={() => scrollTo('contact')}>{t('Tell us everything')}</Large>
               <Para>{t(`Vous avez une question? N'hésitez pas à nous contacter`)}</Para>
               <a href="mailto:contact@augure.io">
                 <Chat>{t(`Let's Chat`)}</Chat>
@@ -64,13 +69,13 @@ const Footer = ({ t }: { t: TFunction }) => {
               <Large to="/">{t("Support Center")}</Large>
               <Large to="/">{t("Customer Support")}</Large>
             </Col> */}
-            <Col lg={8} md={8} sm={12} xs={12}>
+            {/* <Col lg={8} md={8} sm={12} xs={12}>
               <Title>{t('Company')}</Title>
               <Large to="/">{t('About')}</Large>
               <Large to="/">{t('Blog')}</Large>
               <Large to="/">{t('Press')}</Large>
               <Large to="/">{t('Careers & Culture')}</Large>
-            </Col>
+            </Col> */}
           </Row>
           {/* <Row justify="space-between"> */}
           {/* <Col lg={10} md={10} sm={12} xs={12}>
@@ -87,7 +92,7 @@ const Footer = ({ t }: { t: TFunction }) => {
               <Large to="/">{t("Press")}</Large>
               <Large to="/">{t("Careers & Culture")}</Large>
             </Col> */}
-          <Col lg={6} md={6} sm={12} xs={12}>
+          {/* <Col lg={6} md={6} sm={12} xs={12}>
             <Label htmlFor="select-lang">{t('Language')}</Label>
             <LanguageSwitchContainer>
               <LanguageSwitch onClick={() => handleChange('en')}>
@@ -97,7 +102,7 @@ const Footer = ({ t }: { t: TFunction }) => {
                 <SvgIcon src="spain.svg" aria-label="homepage" width="30px" height="30px" />
               </LanguageSwitch>
             </LanguageSwitchContainer>
-          </Col>
+          </Col> */}
           {/* </Row> */}
         </Container>
       </FooterSection>
