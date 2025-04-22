@@ -6,17 +6,8 @@ export const ContentSection = styled('section')`
   padding: 4rem 0 4rem;
 
   @media only screen and (max-width: 1024px) {
-    // max-width: calc(100% - 400px);
     padding: 2rem 0 2rem;
   }
-  // @media only screen and (max-width: 768px) {
-  //   max-width: calc(100% - 100px);
-  //   padding: 2rem 0 2rem;
-  // }
-  // @media only screen and (max-width: 414px) {
-  //   max-width: calc(100% - 100px);
-  //   padding: 2rem 0 2rem;
-  // }
 `
 
 export const Content = styled('p')`
@@ -79,4 +70,8 @@ export const StyledSVG = styled('svg')`
   width: 100%;
   height: 100%;
   pointerevents: none;
+  @media screen and (min-width: 724px) {
+    width: 30%;
+    height: 30%;
+  }
 `

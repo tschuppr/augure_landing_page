@@ -69,9 +69,7 @@ export const CarouselWrapper = styled(Carousel)`
   .slick-dots li button {
     background-color: #2e186a;
     height: 10px;
-    &:hover,
-    &:active,
-    &:focus {
+    &:hover {
       color: #fff;
       border: 1px solid rgb(255, 130, 92);
       background-color: rgb(255, 130, 92);

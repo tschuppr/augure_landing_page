@@ -34,6 +34,7 @@ const TestimonyBlock = ({ title, elements, t, id }: TestimonyBlockProps) => {
               <CarouselWrapper
                 pauseOnDotsHover={true}
                 slidesToShow={3}
+                autoplay={true}
                 responsive={[
                   {
                     breakpoint: 1024,
