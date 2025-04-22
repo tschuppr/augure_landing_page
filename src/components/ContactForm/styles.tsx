@@ -16,7 +16,7 @@ export const FormGroup = styled('form')`
 
   @media only screen and (max-width: 1000px) {
     max-width: 100%;
-    margin-top: 2rem;
+    // margin-top: 2rem;
   }
 `
 

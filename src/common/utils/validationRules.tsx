@@ -14,8 +14,11 @@ export default function validate(values: validateProps) {
   // if (!values.message) {
   //   errors.message = 'Message is required'
   // }
-  if (!values.tel) {
-    errors.tel = 'Telephone is required'
+  if (!values.tel_number) {
+    errors.tel_number = 'Telephone is required'
+  }
+  if (!values.pharma_name) {
+    errors.pharma_name = 'Pharmacy name is required'
   }
   return errors
 }

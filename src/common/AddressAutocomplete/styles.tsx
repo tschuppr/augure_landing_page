@@ -4,7 +4,7 @@ import { List } from 'antd'
 export const Container = styled('div')`
   display: inline-block;
   width: 100%;
-  padding: 10px 0px;
+  padding: 5px 0px;
 `
 
 export const StyledList = styled(List)`

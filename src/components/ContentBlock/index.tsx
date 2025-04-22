@@ -83,6 +83,7 @@ const ContentBlock = ({
                           ) => {
                             return (
                               <Col key={id} span={11}>
+                                <SvgIcon src={item.icon} width="40%" />
                                 <MinTitle>{t(item.title)}</MinTitle>
                                 <MinPara>{t(item.content)}</MinPara>
                               </Col>

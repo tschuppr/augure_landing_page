@@ -7,6 +7,7 @@ interface IValues {
   message: string
   tel_number: string
   last_name: string
+  pharma_name: string
   address: string
 }
 
@@ -16,6 +17,7 @@ const initialValues: IValues = {
   message: '',
   tel_number: '',
   last_name: '',
+  pharma_name: '',
   address: ''
 }
 

@@ -42,6 +42,7 @@ const Contact = ({ title, content, id, t }: ContactProps) => {
                 <FormGroup autoComplete="off" onSubmit={handleSubmit}>
                   <Col span={12}>
                     <Input
+                      pad="5px 5px"
                       type="text"
                       name="name"
                       placeholder="Your Name"
@@ -52,6 +53,7 @@ const Contact = ({ title, content, id, t }: ContactProps) => {
                   </Col>
                   <Col span={12}>
                     <Input
+                      pad="5px 5px"
                       type="text"
                       name="last_name"
                       placeholder="Your Last Name"
@@ -61,21 +63,34 @@ const Contact = ({ title, content, id, t }: ContactProps) => {
                     <ValidationType type="name" />
                   </Col>
                   <Col span={24}>
+                    <Input
+                      pad="5px 5px"
+                      type="text"
+                      name="pharma_name"
+                      placeholder="Your pharmacy's name"
+                      value={values.pharma_name || ''}
+                      onChange={handleChange}
+                    />
+                    <ValidationType type="pharma_name" />
+                  </Col>
+                  <Col span={24}>
                     <AddressAutocomplete />
                     {/* <ValidationType type="address" /> */}
                   </Col>
                   <Col span={24}>
                     <Input
+                      pad="5px 5px"
                       type="tel"
                       name="tel_number"
                       placeholder="Your number"
                       value={values.tel_number || ''}
                       onChange={handleChange}
                     />
-                    <ValidationType type="tel" />
+                    <ValidationType type="tel_number" />
                   </Col>
                   <Col span={24}>
                     <Input
+                      pad="5px 5px"
                       type="text"
                       name="email"
                       placeholder="Your Email"
@@ -86,12 +101,12 @@ const Contact = ({ title, content, id, t }: ContactProps) => {
                   </Col>
                   <Col span={24}>
                     <TextArea
+                      pad="5px 5px"
                       placeholder="Your Message"
                       value={values.message || ''}
                       name="message"
                       onChange={handleChange}
                     />
-                    {/* <ValidationType type="message" /> */}
                   </Col>
                   <ButtonContainer>
                     <Button name="submit">{t('Submit')}</Button>

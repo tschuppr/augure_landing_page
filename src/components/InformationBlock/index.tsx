@@ -1,7 +1,6 @@
 import { Row, Col } from 'antd'
 import { lazy } from 'react'
-
-import { Fade } from 'react-awesome-reveal'
+import { Slide } from 'react-awesome-reveal'
 import { withTranslation } from 'react-i18next'
 import { TFunction } from 'i18next'
 import { SvgIcon } from '../../common/SvgIcon'
@@ -16,10 +15,9 @@ const Container = lazy(() => import('../../common/Container'))
 interface InformationBlockProps {
   id: string
   t: TFunction
-  direction: 'left' | 'right'
 }
 
-const InformationBlock = ({ t, id, direction }: InformationBlockProps) => {
+const InformationBlock = ({ t, id }: InformationBlockProps) => {
   const scrollTo = (id: string) => {
     const element = document.getElementById(id) as HTMLDivElement
     element.scrollIntoView({
@@ -30,33 +28,28 @@ const InformationBlock = ({ t, id, direction }: InformationBlockProps) => {
   return (
     <MiddleBlockSection>
       <Container>
-        <Fade direction={direction} triggerOnce>
-          <Row justify="space-between" align="middle" id={id}>
-            {/* <ContentWrapper> */}
-            <Col lg={8} md={8} sm={8} xs={24}>
+        <Row justify="space-between" align="middle" id={id}>
+          <Col lg={8} md={8} sm={8} xs={24}>
+            <Slide direction="left" triggerOnce>
               <ContentWrapper>
                 <SvgIcon src={'ventilation.svg'} width="100%" height="100%" />
               </ContentWrapper>
-            </Col>
-            {/* </ContentWrapper> */}
-            {/* <ContentWrapper> */}
-            <Col lg={6} md={6} sm={6} xs={24}>
-              <ContentWrapper>
-                <Title>Votre Remise</Title>
-                <NumberFlow />
-              </ContentWrapper>
-            </Col>
-            <Col lg={8} md={8} sm={8} xs={24}>
+            </Slide>
+          </Col>
+          <Col lg={6} md={6} sm={6} xs={24}>
+            <ContentWrapper>
+              <Title>Votre Remise</Title>
+              <NumberFlow />
+            </ContentWrapper>
+          </Col>
+          <Col lg={8} md={8} sm={8} xs={24}>
+            <Slide direction="right" triggerOnce>
               <ContentWrapper>
                 <SvgIcon src={'synthese.svg'} width="100%" height="100%" />
               </ContentWrapper>
-            </Col>
-            {/* </ContentWrapper> */}
-            {/* <ContentWrapper> */}
-
-            {/* </ContentWrapper> */}
-          </Row>
-        </Fade>
+            </Slide>
+          </Col>
+        </Row>
       </Container>
     </MiddleBlockSection>
   )

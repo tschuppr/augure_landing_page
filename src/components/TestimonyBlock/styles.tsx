@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Carousel } from 'antd'
 
 export const TestimonyBlockSection = styled('section')`
   // background: #e2f1f3;
@@ -58,4 +59,22 @@ export const MinPara = styled('p')`
 export const Name = styled('p')`
   font-size: 16px;
   color: rgb(0, 0, 0);
+`
+export const CarouselWrapper = styled(Carousel)`
+  slidesToShow: 2;
+  // .ant-carousel .slick-dots ul {
+  //   height: 30px;
+  // }
+  slidesToShow={3}
+  .slick-dots li button {
+    // height: 30px;
+    background-color: #2e186a;
+  }
+  .slick-dots li::after {
+    // height: 30px;
+    background-color: #2e186a;
+  }
+  @media only screen and (max-width: 768px) {
+    slidesToShow: 1
+  }
 `

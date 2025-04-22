@@ -46,14 +46,7 @@ const Home = () => {
         icon="spreadsheet.svg"
         id="mission"
       />
-      {/* <ContentBlock
-        direction="left"
-        title={ProductContent.title}
-        content={ProductContent.text}
-        icon="ventilation.svg"
-        id="product"
-      /> */}
-      <InformationBlock id="information" direction="right" />
+      <InformationBlock id="information" />
       <Contact title={ContactContent.title} content={ContactContent.text} id="contact" />
     </div>
   )

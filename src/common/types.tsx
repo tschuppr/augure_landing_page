@@ -23,6 +23,7 @@ export interface BackgroundImageProps {
 }
 
 export interface InputProps {
+  pad: string
   name: string
   placeholder: string
   t: TFunction
@@ -37,6 +38,7 @@ export interface validateProps {
   message: string
   email: string
   address: string
-  tel: string
+  tel_number: string
+  pharma_name: string
   last_name: string
 }

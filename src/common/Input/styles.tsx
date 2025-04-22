@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled('div')`
   display: inline-block;
   width: 100%;
-  padding: 0px 5px;
+  // padding: 5px 5px;
 `
 
 export const StyledInput = styled('input')`

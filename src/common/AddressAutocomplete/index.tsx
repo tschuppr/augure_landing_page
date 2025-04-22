@@ -54,6 +54,7 @@ const AddressAutocomplete = () => {
     <>
       <Container>
         <Input
+          pad="0 5px"
           type="text"
           name="address"
           value={inputValue}

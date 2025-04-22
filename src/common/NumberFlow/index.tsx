@@ -1,61 +1,36 @@
-import { motion, useInView } from 'framer-motion'
-import { useState, useRef, useEffect } from 'react'
-
-const scrambleDigits = (target, number) => {
-  const length = target.toString().length
-  let result = number
-  for (let i = 0; i < length; i++) {
-    result += Math.floor(Math.random() * 10)
-  }
-  return result
-}
+import { animate, motion, useInView, useTransform, useMotionValue } from 'framer-motion'
+import { useRef, useEffect, useState } from 'react'
 
 export const NumberFlow = () => {
-  const finalNumbers = 11089
-  const [number, setNumber] = useState(150)
+  const finalNumbers = 10080
+  const [trigger, setTrigger] = useState(true)
+  const number = useMotionValue(0)
   const ref = useRef(null)
   const isInView = useInView(ref, { once: false })
-  const intervalRef = useRef(null)
-  const timeoutRef = useRef(null)
-
+  const rounded = useTransform(() => Math.round(number.get()))
   useEffect(() => {
-    if (isInView) {
-      // Start scrambling
-      const target = finalNumbers
-      intervalRef.current = setInterval(() => {
-        setNumber(scrambleDigits(target, number))
-      }, 500)
-
-      // Settle on final number after 1 second
-      timeoutRef.current = setTimeout(() => {
-        clearInterval(intervalRef.current)
-        setNumber(target)
-      }, 2000)
+    if (isInView && trigger) {
+      number.set(0)
+      setTrigger(false)
     }
 
-    // Cleanup on unmount or visibility change
+    const controls = animate(number, finalNumbers, {
+      ease: [0, 1, 0, 1],
+      duration: 7
+    })
+
     return () => {
-      clearInterval(intervalRef.current)
-      clearTimeout(timeoutRef.current)
+      controls.stop()
     }
   }, [isInView])
+
   return (
-    <div
-      ref={ref}
-      className="flex items-center justify-center h-screen bg-gray-900 text-white text-6xl font-bold"
-    >
-      {/* <AnimatePresence initial={false}> */}
-      <motion.div
-        key={number}
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        // exit={{ opacity: 0, y: -40 }}
-        transition={{ duration: 0.3 }}
-      >
-        <h6>{number}</h6>
-      </motion.div>
+    <div ref={ref} style={{ display: 'block', textAlign: 'center' }}>
+      <h6 style={{ display: 'inline-block', textAlign: 'center' }}>
+        <motion.div>{rounded}</motion.div>
+      </h6>
+      <h6 style={{ display: 'inline-block', textAlign: 'center', margin: '10px' }}>€</h6>
       <p>Valeur constatée en moyenne dans nos pharmacies partenaires</p>
-      {/* </AnimatePresence> */}
     </div>
   )
 }
