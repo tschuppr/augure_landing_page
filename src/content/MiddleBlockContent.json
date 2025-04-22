@@ -4,12 +4,12 @@
   "section": [
     {
       "title": "Liste fournisseur?",
-      "content": "Grossiste/génériqueur/labo...",
+      "content": "Grossiste/ génériqueur/ labo...",
       "icon": "fournisseur.svg"
     },
     {
       "title": "Liste/catégorie produits?",
-      "content": "Médicaments/parapharmacie...",
+      "content": "Médicaments/ parapharmacie...",
       "icon": "medicament.svg"
     }
   ]

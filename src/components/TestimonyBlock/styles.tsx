@@ -2,19 +2,16 @@ import styled from 'styled-components'
 import { Carousel } from 'antd'
 
 export const TestimonyBlockSection = styled('section')`
-  // background: #e2f1f3;
-  //   background: #FFF0EB;
-
   width: 100%;
   position: relative;
-  padding: 5rem 0;
   text-align: center;
   display: flex;
   justify-content: center;
+  padding: 4rem 0 4rem;
 
-  //   @media screen and (max-width: 1024px) {
-  //     padding: 5.5rem 0 3rem;
-  //   }
+  @media only screen and (max-width: 1024px) {
+    padding: 2rem 0 2rem;
+  }
 `
 
 export const Title = styled('h6')`
@@ -61,20 +58,27 @@ export const Name = styled('p')`
   color: rgb(0, 0, 0);
 `
 export const CarouselWrapper = styled(Carousel)`
-  slidesToShow: 2;
-  // .ant-carousel .slick-dots ul {
-  //   height: 30px;
-  // }
-  slidesToShow={3}
+  .slick-dots {
+    bottom: initial !important;
+  }
+
+  .slick-dots li {
+    height: 10px;
+  }
+
   .slick-dots li button {
-    // height: 30px;
     background-color: #2e186a;
+    height: 10px;
+    &:hover,
+    &:active,
+    &:focus {
+      color: #fff;
+      border: 1px solid rgb(255, 130, 92);
+      background-color: rgb(255, 130, 92);
+    }
   }
   .slick-dots li::after {
-    // height: 30px;
     background-color: #2e186a;
-  }
-  @media only screen and (max-width: 768px) {
-    slidesToShow: 1
+    height: 10px;
   }
 `
