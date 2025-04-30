@@ -81,12 +81,12 @@ const Contact = ({ title, content, id, t }: ContactProps) => {
                     <Input
                       pad="5px 5px"
                       type="tel"
-                      name="tel_number"
+                      name="telephone"
                       placeholder="Your number"
-                      value={values.tel_number || ''}
+                      value={values.telephone || ''}
                       onChange={handleChange}
                     />
-                    <ValidationType type="tel_number" />
+                    <ValidationType type="telephone" />
                   </Col>
                   <Col span={24}>
                     <Input

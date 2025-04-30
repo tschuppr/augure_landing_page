@@ -9,7 +9,6 @@ const AddressAutocomplete = () => {
 
   // Effect to debounce API calls
   useEffect(() => {
-    console.log(inputValue)
     if (inputValue.length <= 3 || selectedSuggestion) {
       setSuggestions([])
       return

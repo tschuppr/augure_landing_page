@@ -38,7 +38,7 @@ export interface validateProps {
   message: string
   email: string
   address: string
-  tel_number: string
+  telephone: string
   pharma_name: string
   last_name: string
 }

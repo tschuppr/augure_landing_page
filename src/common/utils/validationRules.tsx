@@ -14,14 +14,14 @@ export default function validate(values: validateProps) {
   // if (!values.message) {
   //   errors.message = 'Message is required'
   // }
-  if (!values.tel_number) {
-    errors.tel_number = 'Telephone is required'
+  if (!values.telephone) {
+    errors.telephone = 'Telephone is required'
   } else if (
     !/^(?:(?:\+|00)33[\s.-]{0,3}(?:\(0\)[\s.-]{0,3})?|0)[1-9](?:(?:[\s.-]?\d{2}){4}|\d{2}(?:[\s.-]?\d{3}){2})$/.test(
-      values.tel_number
+      values.telephone
     )
   ) {
-    errors.tel_number = 'Telephone number is invalid'
+    errors.telephone = 'Telephone number is invalid'
   }
   if (!values.pharma_name) {
     errors.pharma_name = 'Pharmacy name is required'

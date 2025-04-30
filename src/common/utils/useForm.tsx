@@ -5,7 +5,7 @@ interface IValues {
   name: string
   email: string
   message: string
-  tel_number: string
+  telephone: string
   last_name: string
   pharma_name: string
   address: string
@@ -15,7 +15,7 @@ const initialValues: IValues = {
   name: '',
   email: '',
   message: '',
-  tel_number: '',
+  telephone: '',
   last_name: '',
   pharma_name: '',
   address: ''
@@ -51,12 +51,13 @@ export const useForm = (validate: { (values: IValues): IValues }) => {
     const errors = validate(values)
     setFormState((prevState) => ({ ...prevState, errors }))
 
-    const url = '' // Fill in your API URL here
+    const url = 'https://api.augure.io/api/v1/mail/send' // Fill in your API URL here
 
     try {
       if (Object.values(errors).every((error) => error === '')) {
         const response = await fetch(url, {
           method: 'POST',
+          mode: 'cors',
           headers: {
             'Content-Type': 'application/json'
           },
