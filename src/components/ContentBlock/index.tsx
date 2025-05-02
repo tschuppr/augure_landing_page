@@ -17,7 +17,8 @@ import {
   StyledRow,
   ButtonWrapper,
   SubContent,
-  StyledUl
+  StyledUl,
+  StyledListPart
 } from './styles'
 
 const Container = lazy(() => import('../../common/Container'))
@@ -57,7 +58,9 @@ const ContentBlock = ({
                 {list && list.length > 0 && (
                   <StyledUl>
                     {list.map((item, index) => (
-                      <li key={index}>✔ {t(item.element)}</li>
+                      <li key={index} style={{ display: 'flex' }}>
+                        ✔ <StyledListPart>{t(item.element)}</StyledListPart>
+                      </li>
                     ))}
                   </StyledUl>
                 )}

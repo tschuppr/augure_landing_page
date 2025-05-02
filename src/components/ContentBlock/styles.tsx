@@ -21,12 +21,23 @@ export const StyledUl = styled('ul')`
   text-justify: inter-word;
   list-style-type: none;
   padding: 0;
+  // font-weight: 500;
+  // font-family: 'Figtree italic', sans-serif;
 `
+
+export const StyledListPart = styled('p')`
+  // padding: 0;
+  margin: 0 0 0 1rem;
+  color: #5271ff;
+  font-weight: 300;
+  font-family: 'Figtree italic', sans-serif;
+`
+
 export const SubContent = styled('p')`
   margin: 1.5rem 0 2rem 0;
   text-align: justify;
   text-justify: inter-word;
-  color: rgb(0, 0, 0);
+  color: #5271ff;
   font-weight: 300;
   font-family: 'Figtree italic', sans-serif;
 `

@@ -33,7 +33,7 @@ const Home = () => {
         id="after"
       />
       <ContentBlock
-        direction="right"
+        direction="left"
         title={secondParagraph.title}
         content={secondParagraph.text}
         // section={AboutContent.section}
@@ -41,7 +41,7 @@ const Home = () => {
         id="about"
       />
       <ContentBlock
-        direction="left"
+        direction="right"
         title={thirdParagraph.title}
         content={thirdParagraph.text}
         list={thirdParagraph.list}

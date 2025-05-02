@@ -6,18 +6,22 @@
     {
       "id": 1,
       "name": "Rudy, Pharmacien",
-      "text": "\"Excellent service ! Je recommande vivement.\""
+      "text": "\" Un apport de visibilité claire sur les remises qui simplifient les échanges avec les commerciaux. \""
     },
-    { "id": 2, "name": "Eva, Pharmacienne", "text": "\"Très satisfaite de mon achat. Merci !\"" },
+    {
+      "id": 2,
+      "name": "Eva, Pharmacienne",
+      "text": "\" Je sais où j' en suis. Je ne passe plus mes samedis à vérifier mes factures. Tout est analysé, structuré… et surtout fiable. Selon moi ce n'est pas juste un outil, on a quelqu’un au bout du fil qui comprend nos enjeux, et ça fait clairement une différence. \""
+    },
     {
       "id": 3,
       "name": "Jeremy, Pharmacien",
-      "text": "\"Produit de qualité et livraison rapide. doizah diazhjd azdzai djzapi djzai pdhizah jdipzadaz\n zaoihuj diazh dihzadi hazpdhaz dpoiazdzad\""
+      "text": "\" Les synthèses sont limpides. En quelques pages, je vois ce qui fonctionne, ce qu’on perd, et ce qu’on peut améliorer. \""
     },
     {
       "id": 4,
       "name": "Autre, Pharmacien",
-      "text": "\"dzapdjazpjdoaz daz\n zaoihuj diazh dihzadi hazpdhaz dpoiazdzad\""
+      "text": "\" J’avais l’intuition qu’on perdait de l’argent… mais là, on a mieux compris d'où ça venait. Et comment les combler surtout. J'aime l'idée de l'assurance de ne pas passer à côté. \""
     }
   ]
 }

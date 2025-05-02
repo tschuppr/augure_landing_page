@@ -45,17 +45,17 @@ export const CardWrapper = styled('div')`
 `
 
 export const MinPara = styled('p')`
-  font-size: 24px;
-  line-height: 1rem;
+  // font-size: 24px;
+  // line-height: 1rem;
   padding: 0.5rem 0;
-  color: #5271ff;
+  // color: #5271ff;
   font-family: 'Figtree', sans-serif;
   font-weight: 300;
 `
 
 export const Name = styled('p')`
   font-size: 16px;
-  color: rgb(0, 0, 0);
+  color: #5271ff;
 `
 export const CarouselWrapper = styled(Carousel)`
   .slick-dots {

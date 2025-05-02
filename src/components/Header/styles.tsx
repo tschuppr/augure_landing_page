@@ -87,6 +87,8 @@ export const Outline = styled(MenuOutlined)`
 export const Span = styled('span')`
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  font-family: 'Figtree', serif;
+  font-weight: 500;
 
   &:hover,
   &:active,

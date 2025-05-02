@@ -35,6 +35,7 @@ const TestimonyBlock = ({ title, elements, t, id }: TestimonyBlockProps) => {
                 pauseOnDotsHover={true}
                 slidesToShow={3}
                 autoplay={true}
+                autoplaySpeed={10000}
                 responsive={[
                   {
                     breakpoint: 1024,
@@ -67,7 +68,7 @@ const TestimonyBlock = ({ title, elements, t, id }: TestimonyBlockProps) => {
                       id: number
                     ) => {
                       return (
-                        <Col key={id} lg={14} md={14} sm={14} xs={14}>
+                        <Col key={id} lg={18} md={18} sm={18} xs={18}>
                           <MinPara>{t(item.text)}</MinPara>
                           <Name>{t(item.name)}</Name>
                         </Col>

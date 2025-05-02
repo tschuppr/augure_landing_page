@@ -5,7 +5,16 @@ import { TFunction } from 'i18next'
 import { Slide } from 'react-awesome-reveal'
 import { Button } from '../../common/Button'
 // import { BackgroundImage } from '../../common/ImageIntegration'
-import { MiddleBlockSection, Content, ContentWrapper, StyledSVG } from './styles'
+import {
+  MiddleBlockSection,
+  Content,
+  ContentWrapper,
+  StyledSVG,
+  ListItem,
+  ListContainer,
+  ListContent,
+  ListContentWrapper
+} from './styles'
 
 const Container = lazy(() => import('../../common/Container'))
 
@@ -47,13 +56,26 @@ const MiddleBlock = ({ title, content, button, list, t, id }: MiddleBlockProps) 
             <ContentWrapper>
               <Col lg={24} md={24} sm={24} xs={24}>
                 <h6>{t(title)}</h6>
-                <Content>{t(content)}</Content>
+                {content && <Content>{t(content)}</Content>}
                 {list && list.length > 0 && (
-                  <ul>
+                  <ListContainer>
                     {list.map((item, index) => (
-                      <li key={index}>✔ {t(item.element)}</li>
+                      <ListItem key={index} alignRight={index % 2 !== 0}>
+                        <ListContentWrapper>
+                          <ListContent color="#5271FF" font_weight="900">
+                            {index + 1}.
+                          </ListContent>
+                          <ListContent
+                            color="#000"
+                            font_weight="300"
+                            style={{ margin: '0 0 0 1rem' }}
+                          >
+                            {t(item.element)}
+                          </ListContent>
+                        </ListContentWrapper>
+                      </ListItem>
                     ))}
-                  </ul>
+                  </ListContainer>
                 )}
                 {button && (
                   <Button name="submit" onClick={() => scrollTo('mission')}>

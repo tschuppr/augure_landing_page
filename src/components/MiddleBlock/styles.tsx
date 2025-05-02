@@ -14,6 +14,7 @@ export const MiddleBlockSection = styled('section')`
 
 export const Content = styled('p')`
   padding: 0.75rem 0 0.75rem;
+  font-weight: 500;
 `
 
 export const ContentWrapper = styled('div')`
@@ -32,4 +33,35 @@ export const StyledSVG = styled('svg')`
   height: 100%;
   pointerevents: none;
   // overflow : visible;
+`
+export const ListContainer = styled('ul')`
+  list-style-type: none;
+  padding: 0;
+`
+
+export const ListItem = styled('li')<{ alignRight: string }>`
+  display: flex;
+  align-items: center;
+  justify-content: ${(props) => (props.alignRight ? 'flex-end' : 'flex-start')};
+  // justify-content: flex-start;
+`
+export const ListContent = styled('p')<{ font_weight?: string; color?: string }>`
+  max-width: 500px;
+  text-align: left;
+  margin: 0;
+  float: left;
+  // font-size: 28px;
+  color: ${(p) => p.color};
+  text-justify: inter-word;
+  text-align: justify;
+  font-weight: ${(p) => p.font_weight};
+  font-family: 'Figtree', sans-serif;
+`
+
+export const ListContentWrapper = styled('div')`
+  max-width: 600px;
+  margin: 1rem 0 1rem 0;
+  @media only screen and (max-width: 400px) {
+    max-width: 100%;
+  }
 `

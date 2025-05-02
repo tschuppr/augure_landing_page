@@ -76,19 +76,20 @@ export const Styles = createGlobalStyle`
           font-size: 32px;
         }
     }
-        
+
     li,
     p {
-        color: #5271FF;
+        // color: #5271FF;
+        color: rgb(0, 0, 0);
         font-size: 21px;        
         line-height: 1.41;
-    }
-
-    h1 {
-        font-weight: 600;
+        // font-family: 'Figtree', serif;
+        // font-weight: 400;
     }
 
     a {
+        font-family: 'Figtree', serif;
+        font-weight: 400;
         text-decoration: none;
         outline: none;
         color: #2E186A;
