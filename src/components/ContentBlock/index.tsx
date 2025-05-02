@@ -15,7 +15,9 @@ import {
   MinTitle,
   MinPara,
   StyledRow,
-  ButtonWrapper
+  ButtonWrapper,
+  SubContent,
+  StyledUl
 } from './styles'
 
 const Container = lazy(() => import('../../common/Container'))
@@ -24,8 +26,10 @@ const ContentBlock = ({
   icon,
   title,
   content,
+  sub_content,
   section,
   button,
+  list,
   t,
   id,
   direction
@@ -49,6 +53,14 @@ const ContentBlock = ({
               <ContentWrapper>
                 <h6>{t(title)}</h6>
                 <Content>{t(content)}</Content>
+                {sub_content && <SubContent>{t(sub_content)}</SubContent>}
+                {list && list.length > 0 && (
+                  <StyledUl>
+                    {list.map((item, index) => (
+                      <li key={index}>✔ {t(item.element)}</li>
+                    ))}
+                  </StyledUl>
+                )}
                 {direction === 'right' ? (
                   <ButtonWrapper>
                     {typeof button === 'object' &&
@@ -83,7 +95,7 @@ const ContentBlock = ({
                           ) => {
                             return (
                               <Col key={id} span={11}>
-                                <SvgIcon src={item.icon} width="40%" />
+                                <SvgIcon src={item.icon} width="40%" height="40%" />
                                 <MinTitle>{t(item.title)}</MinTitle>
                                 <MinPara>{t(item.content)}</MinPara>
                               </Col>

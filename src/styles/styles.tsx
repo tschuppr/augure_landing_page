@@ -18,6 +18,7 @@ export const Styles = createGlobalStyle`
 
 
 
+    
     body,
     html,
     a {
@@ -75,7 +76,8 @@ export const Styles = createGlobalStyle`
           font-size: 32px;
         }
     }
-
+        
+    li,
     p {
         color: #5271FF;
         font-size: 21px;        

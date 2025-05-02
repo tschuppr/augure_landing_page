@@ -15,6 +15,21 @@ export const Content = styled('p')`
   text-align: justify;
   text-justify: inter-word;
 `
+export const StyledUl = styled('ul')`
+  margin: 1.5rem 0 2rem 0;
+  text-align: justify;
+  text-justify: inter-word;
+  list-style-type: none;
+  padding: 0;
+`
+export const SubContent = styled('p')`
+  margin: 1.5rem 0 2rem 0;
+  text-align: justify;
+  text-justify: inter-word;
+  color: rgb(0, 0, 0);
+  font-weight: 300;
+  font-family: 'Figtree italic', sans-serif;
+`
 
 export const StyledRow = styled(Row)<{ direction: 'left' | 'right' }>`
   flex-direction: ${({ direction }: { direction: 'left' | 'right' }) =>

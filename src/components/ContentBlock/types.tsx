@@ -3,6 +3,8 @@ export interface ContentBlockProps {
   icon: string
   title: string
   content: string
+  sub_content?: string
+  list?: { element: string }[]
   section?: {
     title: string
     content: string

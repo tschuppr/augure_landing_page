@@ -12,12 +12,13 @@ const Container = lazy(() => import('../../common/Container'))
 interface MiddleBlockProps {
   title: string
   content: string
-  button: string
+  button?: string
+  list?: { element: string }[]
   id: string
   t: TFunction
 }
 
-const MiddleBlock = ({ title, content, button, t, id }: MiddleBlockProps) => {
+const MiddleBlock = ({ title, content, button, list, t, id }: MiddleBlockProps) => {
   const scrollTo = (id: string) => {
     const element = document.getElementById(id) as HTMLDivElement
     element.scrollIntoView({
@@ -47,6 +48,13 @@ const MiddleBlock = ({ title, content, button, t, id }: MiddleBlockProps) => {
               <Col lg={24} md={24} sm={24} xs={24}>
                 <h6>{t(title)}</h6>
                 <Content>{t(content)}</Content>
+                {list && list.length > 0 && (
+                  <ul>
+                    {list.map((item, index) => (
+                      <li key={index}>✔ {t(item.element)}</li>
+                    ))}
+                  </ul>
+                )}
                 {button && (
                   <Button name="submit" onClick={() => scrollTo('mission')}>
                     {t(button)}
