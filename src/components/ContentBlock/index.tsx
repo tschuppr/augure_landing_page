@@ -47,12 +47,9 @@ const ContentBlock = ({
       <Container>
         <Fade direction={direction} triggerOnce>
           <StyledRow justify="space-between" align="middle" id={id} direction={direction}>
-            <Col lg={11} md={11} sm={11} xs={24}>
-              <SvgIcon src={icon} width="100%" height="100%" />
-            </Col>
-            <Col lg={11} md={11} sm={11} xs={24}>
+            <Col lg={11} md={11} sm={24} xs={24}>
               <ContentWrapper>
-                <h6>{t(title)}</h6>
+                <h5>{t(title)}</h5>
                 <Content>{t(content)}</Content>
                 {sub_content && <SubContent>{t(sub_content)}</SubContent>}
                 {list && list.length > 0 && (
@@ -109,6 +106,9 @@ const ContentBlock = ({
                   </ServiceWrapper>
                 )}
               </ContentWrapper>
+            </Col>
+            <Col lg={11} md={11} sm={24} xs={24}>
+              <SvgIcon src={icon} width="100%" height="100%" />
             </Col>
           </StyledRow>
         </Fade>

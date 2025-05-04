@@ -1,0 +1,11 @@
+{
+  "list": [
+    { "text": "Des dizaines de titulaires déjà accompagnés" },
+    {
+      "text": "récupérés en moyenne par pharmacie, chaque année",
+      "number": 4700,
+      "number_unit": "€"
+    },
+    { "text": "lignes d’achat analysées par an, par officine", "number": 52000 }
+  ]
+}

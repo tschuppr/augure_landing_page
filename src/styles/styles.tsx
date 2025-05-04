@@ -60,7 +60,22 @@ export const Styles = createGlobalStyle`
     h2,
     h3,
     h4,
-    h5,
+    h5{
+        font-family: 'Figtree', serif;
+        font-weight: 600;
+        color: #2e186a;
+        font-size: 47px;
+        line-height: 1.18;
+
+        @media only screen and (max-width: 890px) {
+          font-size: 32px;
+        }
+      
+        @media only screen and (max-width: 414px) {
+          font-size: 24px;
+        }
+    }
+
     h6 {
         font-family: 'Figtree', serif;
         font-weight: 600;

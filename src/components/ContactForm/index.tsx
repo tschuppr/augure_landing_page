@@ -31,13 +31,13 @@ const Contact = ({ title, content, id, t }: ContactProps) => {
       {contextHolder}
       <Container>
         <ContactContainer id={id}>
-          <Row justify="space-between" align="middle">
-            <Col lg={11} md={11} sm={11} xs={24}>
+          <Row justify="space-between">
+            <Col lg={11} md={11} sm={24} xs={24}>
               <Slide direction="left" triggerOnce>
                 <Block title={title} content={content} />
               </Slide>
             </Col>
-            <Col lg={11} md={11} sm={11} xs={24}>
+            <Col lg={11} md={11} sm={24} xs={24}>
               <Slide direction="right" triggerOnce>
                 <FormGroup autoComplete="off" onSubmit={handleSubmit}>
                   <Col span={12}>

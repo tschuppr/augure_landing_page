@@ -5,6 +5,8 @@ import secondParagraph from '../../content/secondParagraph.json'
 import thirdParagraph from '../../content/thirdParagraph.json'
 import fourthParagraph from '../../content/fourthParagraph.json'
 import ContactContent from '../../content/ContactContent.json'
+import information from '../../content/information.json'
+import { info } from 'console'
 
 const Contact = lazy(() => import('../../components/ContactForm'))
 const MiddleBlock = lazy(() => import('../../components/MiddleBlock'))
@@ -54,7 +56,7 @@ const Home = () => {
         list={fourthParagraph.list}
         id="product"
       />
-      <InformationBlock id="information" />
+      <InformationBlock id="information" list={information.list} />
       <Contact title={ContactContent.title} content={ContactContent.text} id="contact" />
     </div>
   )
